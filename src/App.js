@@ -5,18 +5,17 @@ import ThankYou from './components/ThankYou';
 import Submit from './components/Submit';
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Internship Signup Form</h1>
         <hr></hr>
-        <p>Prepare for your career with a Project Management, Web-Development, Graphic Design, or Digital Marketing Internship at Northern.</p>
-      </header>
-      <div class = "submission">
+      </header> 
+      <div className = "submission">
       <Form></Form>
       </div>
-      <ThankYou></ThankYou>
+      {/* <ThankYou></ThankYou> */}
     </div>
   );
 }

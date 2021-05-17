@@ -1,25 +1,36 @@
 import React, {useState} from "react";
 import "./form.css";
 import Submit from './Submit';
+import Saving from './Saving';
+import ThankYou from './ThankYou';
 
 export default function Form(props){
     const [email, setEmail] = useState("");
     const [state, setState] = useState("unsubmitted");
+    const [complete, setComplete] = useState("incomplete");
 
     function submit(){
         if (email === ""){
             console.log("Please enter a valid email");
+        } else {
+            console.log(email);
+            setState("submitted");
+            setTimeout(()=>{
+                setComplete("completed");
+            }, 2000);
         }
-        console.log(email);
     }
-
+    if(complete==="incomplete"){
     return (
-        <div class="info">
-            <div class="form-input">
+        <div className="info">
+           <p>Prepare for your career with a Project Management, Web-Development, Graphic Design, or Digital Marketing Internship at Northern.</p>
+            <div className="form-input">
+                <div className="fields">
                 <form>
                     <input 
                         placeholder="Your Email Address" 
-                        class="email" email="email" 
+                        className="email" 
+                        email="email" 
                         onChange={(event) => setEmail(event.target.value)}>
                     </input>
                 </form>
@@ -30,9 +41,15 @@ export default function Form(props){
                     <option>Graphic Design</option>
                     <option>Digital Marketing</option>
                 </select>
+                </div>
+            {state === "unsubmitted" && <Submit onClick={submit}></Submit>}
+            {state === "submitted" && <Saving></Saving>}
             </div>
-            <Submit onClick={submit}></Submit>
         </div>
 
-    )
+    )} else {
+        return(
+            <ThankYou></ThankYou>
+        )
+    }
 }
