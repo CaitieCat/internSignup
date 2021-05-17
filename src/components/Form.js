@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { validate } from 'email-validator';
 import "./form.css";
 import Submit from './Submit';
 import Saving from './Saving';
