@@ -14,7 +14,7 @@ function App() {
         <p>Prepare for your career with a Project Management, Web-Development, Graphic Design, or Digital Marketing Internship at Northern.</p>
       </header>
       <div class = "submission">
-      <Form inputType="Your Email Address"></Form>
+      <Form></Form>
       </div>
       <ThankYou></ThankYou>
     </div>

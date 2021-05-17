@@ -1,13 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import "./form.css";
+import Submit from './Submit';
 
 export default function Form(props){
+    const [email, setEmail] = useState("");
+    const [state, setState] = useState("unsubmitted");
+
+    function submit(){
+        if (email === ""){
+            console.log("Please enter a valid email");
+        }
+        console.log(email);
+    }
 
     return (
         <div class="info">
             <div class="form-input">
                 <form>
-                    <input placeholder = {props.inputType} class="email"></input>
+                    <input 
+                        placeholder="Your Email Address" 
+                        class="email" email="email" 
+                        onChange={(event) => setEmail(event.target.value)}>
+                    </input>
                 </form>
                 <select id="interests">
                     <option>Your Interests</option>
@@ -17,7 +31,7 @@ export default function Form(props){
                     <option>Digital Marketing</option>
                 </select>
             </div>
-            <button>Submit</button>
+            <Submit onClick={submit}></Submit>
         </div>
 
     )
