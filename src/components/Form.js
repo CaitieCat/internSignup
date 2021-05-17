@@ -15,7 +15,12 @@ export default function Form(props){
     var validator = require("email-validator");
 
     function submit(){
-        if (validator.validate(email)){
+        if (!validator.validate(email)){
+            setEmail("invalidEmail");
+            console.log("Please enter a valid email");
+        } else if (choice === ""){
+            console.log("Please select an interest");
+        } else {
             console.log(email);
             console.log(choice);
             setState("submitted");
@@ -28,9 +33,10 @@ export default function Form(props){
     return (
         <div className="info">
            <p>Prepare for your career with a Project Management, Web-Development, Graphic Design, or Digital Marketing Internship at Northern.</p>
+                {email==="invalidEmail" && <h5 className="error">Please enter a valid email</h5>}
             <div className="form-input">
                 <div className="fields">
-                <form>
+                <form className="email">
                     <input 
                         placeholder="Your Email Address" 
                         className="email" 
@@ -39,7 +45,7 @@ export default function Form(props){
                     </input>
                 </form>
                 <select 
-                id="interests"
+                className="interests"
                 onChange={(event2) => setChoice(event2.target.value)}>
                     <option value="">Your Interests</option>
                     <option value="Project Management">Project Management</option>
