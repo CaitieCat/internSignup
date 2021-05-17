@@ -73,3 +73,21 @@ button{
     width: 50%;
     text-align: right;
 }
+
+@media (max-width: 600px){
+    .fields{
+        flex-direction: column;
+    }
+
+    .emailField{
+        margin:0;
+    }
+
+    .selectBox{
+        margin: 0;
+    }
+
+    .error{
+        width: 100%;
+    }
+}

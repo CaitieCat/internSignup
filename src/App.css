@@ -35,3 +35,9 @@ hr{
   background-color: #d02035;
   border-color: #d02035;
 }
+
+@media (max-width: 800px){
+  .App{
+    padding: 10px;
+  }
+}
