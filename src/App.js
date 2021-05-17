@@ -9,13 +9,12 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Internship Signup Form</h1>
-        <hr></hr>
+        <h1>INTERSHIP SIGNUP FORM</h1>
+        <hr align="left"></hr>
       </header> 
       <div className = "submission">
       <Form></Form>
       </div>
-      {/* <ThankYou></ThankYou> */}
     </div>
   );
 }

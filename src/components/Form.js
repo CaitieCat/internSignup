@@ -1,19 +1,23 @@
 import React, {useState} from "react";
+import { validate } from 'email-validator';
 import "./form.css";
 import Submit from './Submit';
 import Saving from './Saving';
 import ThankYou from './ThankYou';
 
+
 export default function Form(props){
     const [email, setEmail] = useState("");
     const [state, setState] = useState("unsubmitted");
     const [complete, setComplete] = useState("incomplete");
+    const [choice, setChoice] = useState("");
+
+    var validator = require("email-validator");
 
     function submit(){
-        if (email === ""){
-            console.log("Please enter a valid email");
-        } else {
+        if (validator.validate(email)){
             console.log(email);
+            console.log(choice);
             setState("submitted");
             setTimeout(()=>{
                 setComplete("completed");
@@ -34,12 +38,14 @@ export default function Form(props){
                         onChange={(event) => setEmail(event.target.value)}>
                     </input>
                 </form>
-                <select id="interests">
-                    <option>Your Interests</option>
-                    <option>Project Management</option>
-                    <option>Web Development</option>
-                    <option>Graphic Design</option>
-                    <option>Digital Marketing</option>
+                <select 
+                id="interests"
+                onChange={(event2) => setChoice(event2.target.value)}>
+                    <option value="">Your Interests</option>
+                    <option value="Project Management">Project Management</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
                 </select>
                 </div>
             {state === "unsubmitted" && <Submit onClick={submit}></Submit>}
