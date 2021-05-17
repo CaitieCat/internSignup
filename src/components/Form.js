@@ -33,17 +33,18 @@ export default function Form(props){
     return (
         <div className="info">
            <p>Prepare for your career with a Project Management, Web-Development, Graphic Design, or Digital Marketing Internship at Northern.</p>
-                {email==="invalidEmail" && <h5 className="error">Please enter a valid email</h5>}
+            {email==="invalidEmail" && <h5 className="error">Please enter a valid email</h5>}
             <div className="form-input">
                 <div className="fields">
                 <form className="email">
                     <input 
                         placeholder="Your Email Address" 
-                        className="email" 
+                        className="emailField" 
                         email="email" 
                         onChange={(event) => setEmail(event.target.value)}>
                     </input>
                 </form>
+                <div className="selectBox">
                 <select 
                 className="interests"
                 onChange={(event2) => setChoice(event2.target.value)}>
@@ -53,6 +54,7 @@ export default function Form(props){
                     <option value="Graphic Design">Graphic Design</option>
                     <option value="Digital Marketing">Digital Marketing</option>
                 </select>
+                </div>
                 </div>
             {state === "unsubmitted" && <Submit onClick={submit}></Submit>}
             {state === "submitted" && <Saving></Saving>}

@@ -1,23 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
 
-.email{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    font-family: "Merriweather", sans-serif;
-    font-size: 16px;
-    color: #797979;
-}
-
-.interests{
-    font-family: "Merriweather", sans-serif;
-    font-size: 16px;
-    color: #797979;
-}
-
-
 .info{
-    height: 50vh;
     display: flex;
     flex-direction: column;
 }
@@ -30,18 +13,54 @@
 
 .fields{
     display: flex;
+    justify-content: space-between;
 }
 
-select{
-    width: 50vw;
-    margin-left: 0.5em;
-    height: 5vh;
+.email{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-input{
-    width: 50vw;
+.emailField{
+    font-family: "Merriweather", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #797979;
+    width: 100%;
     margin-right: 0.5em;
-    height: 5vh;
+    padding: 0.5em;
+}
+
+.emailField:focus{
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: #d02035;
+}
+
+.selectBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0.5em;
+    
+}
+
+.interests{
+    font-family: "Merriweather", sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #797979;
+    width: 100%;
+    padding: 9px;
+}
+
+.interests:focus{
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: #d02035;
 }
 
 button{
@@ -53,5 +72,4 @@ button{
     font-size: 12px;
     width: 50%;
     text-align: right;
-    margin-right: 0.5em;
 }

@@ -9,7 +9,7 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>INTERSHIP SIGNUP FORM</h1>
+        <h1>INTERNSHIP SIGNUP FORM</h1>
         <hr align="left"></hr>
       </header> 
       <div className = "submission">
