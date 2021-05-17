@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
+import ThankYou from './components/ThankYou';
 import Submit from './components/Submit';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
       <div class = "submission">
       <Form inputType="Your Email Address"></Form>
       </div>
+      <ThankYou></ThankYou>
     </div>
   );
 }
