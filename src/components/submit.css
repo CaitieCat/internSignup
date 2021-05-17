@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+button{
+    background-color: #d02035;
+    color: white;
+    font-family: "Merriweather", sans-serif;
+    font-size: 20px;
+}
