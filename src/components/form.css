@@ -45,7 +45,6 @@
     justify-content: center;
     width: 100%;
     margin-left: 0.5em;
-    
 }
 
 .interests{
@@ -55,12 +54,17 @@
     color: #797979;
     width: 100%;
     padding: 9px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('dropdown-arrow.jpeg');
+    background-repeat: no-repeat;
+	background-position: right 1em bottom 50%;
+	background-size: 1.2em;
 }
 
-button{
-    width: 100%;
-    border-color: #d02035;
-    border-radius: 5px;
+.interests::-ms-expand {
+    display: block;
 }
 
 .error{

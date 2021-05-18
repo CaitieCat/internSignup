@@ -5,14 +5,17 @@ import Saving from './Saving';
 import ThankYou from './ThankYou';
 
 
-export default function Form(props){
+export default function Form(){
+    //initializing states
     const [email, setEmail] = useState("");
     const [state, setState] = useState("unsubmitted");
     const [complete, setComplete] = useState("incomplete");
     const [choice, setChoice] = useState("");
 
+    //using the validator library to validate emails
     var validator = require("email-validator");
 
+    //function to set state of submission and check that all fields are filled out correctly
     function submit(){
         if (!validator.validate(email)){
             setEmail("invalidEmail");
@@ -35,31 +38,30 @@ export default function Form(props){
             {email==="invalidEmail" && <h5 className="error">Please enter a valid email</h5>}
             <div className="form-input">
                 <div className="fields">
-                <form className="email">
-                    <input 
-                        placeholder="Your Email Address" 
-                        className="emailField" 
-                        email="email" 
-                        onChange={(event) => setEmail(event.target.value)}>
-                    </input>
-                </form>
+                    <form className="email">
+                        <input 
+                            placeholder="Your Email Address" 
+                            className="emailField" 
+                            email="email" 
+                            onChange={(event) => setEmail(event.target.value)}>
+                        </input>
+                    </form>
                 <div className="selectBox">
-                <select 
-                className="interests"
-                onChange={(event2) => setChoice(event2.target.value)}>
-                    <option value="">Your Interests</option>
-                    <option value="Project Management">Project Management</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value="Graphic Design">Graphic Design</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                </select>
+                    <select 
+                        className="interests"
+                        onChange={(event2) => setChoice(event2.target.value)}>
+                            <option value="">Your Interests</option>
+                            <option value="Project Management">Project Management</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                    </select>
                 </div>
-                </div>
+            </div>
             {state === "unsubmitted" && <Submit onClick={submit}></Submit>}
             {state === "submitted" && <Saving></Saving>}
             </div>
         </div>
-
     )} else {
         return(
             <ThankYou></ThankYou>

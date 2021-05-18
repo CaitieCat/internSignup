@@ -1,6 +1,6 @@
 import './thankYou.css';
 
-export default function(props){
+export default function ThankYou(){
     return(
         <div className="thankYou">
         <h1>Thanks for your interest!</h1>

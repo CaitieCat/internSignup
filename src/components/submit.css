@@ -2,6 +2,8 @@
 
 button{
     background-color: #d02035;
+    border-color: #d02035;
+    border-radius: 5px;
     color: white;
     font-family: "Merriweather", sans-serif;
     font-size: 20px;
