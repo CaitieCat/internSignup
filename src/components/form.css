@@ -57,20 +57,16 @@
     padding: 9px;
 }
 
-.interests:focus{
-    outline-style: solid;
-    outline-width: 3px;
-    outline-color: #d02035;
-}
-
 button{
     width: 100%;
+    border-color: #d02035;
+    border-radius: 5px;
 }
 
 .error{
     font-family: "Merriweather", sans-serif;
     font-size: 12px;
-    width: 50%;
+    width: 49%;
     text-align: right;
 }
 
